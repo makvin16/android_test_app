@@ -1,39 +1,43 @@
-plugins {
-    id 'com.android.application'
-}
+import dependencies.Libraries
+import dependencies.Modules
+import dependencies.Releases
+
+apply plugin: 'com.android.application'
+apply from: '../android_common.gradle'
+apply from: '../android_core.gradle'
+apply from: '../android_network.gradle'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
-
     defaultConfig {
-        applicationId "com.zm.testapp"
-        minSdkVersion 23
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
-
+        applicationId Releases.APPLICATION_ID
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    buildFeatures {
+        viewBinding true
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://randomuser.me/\"")
+        }
+        release {
+            buildConfigField("String", "BASE_URL", "\"https://randomuser.me/\"")
+        }
     }
 }
 
 dependencies {
+    implementation project(Modules.COMMON)
+    implementation project(Modules.DOMAIN)
+    implementation project(Modules.DATA)
 
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation Libraries.NAVIGATION_FRAGMENT
+    implementation Libraries.NAVIGATION_UI
+    implementation Libraries.TIMBER
+    implementation Libraries.DAGGER
+    implementation Libraries.DAGGER_ANDROID
+    implementation Libraries.DAGGER_ANDROID_SUPPORT
+    annotationProcessor Libraries.DAGGER_COMPILER
+    annotationProcessor Libraries.DAGGER_PROCESSOR
+    implementation Libraries.GLIDE
+    annotationProcessor Libraries.GLIDE_COMPILER
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TestApp</string>
+    <string name="users">Users</string>
+    <string name="user_details">User Details</string>
+    <string name="error_internet_connection">Не подключен интернет</string>
+    <string name="error_connection">Ошибка подключения</string>
+    <string name="error_server">Ошибка сервера</string>
+    <string name="replay">Повторить</string>
+    <string name="year">лет</string>
+    <string name="label_users">UsersFragment</string>
+    <string name="label_user_details">UserDetailsFragment</string>
 </resources>

@@ -1,0 +1,9 @@
+import dependencies.Libraries
+
+dependencies {
+    implementation Libraries.RX_ANDROID
+    implementation Libraries.RETROFIT
+    implementation Libraries.RETROFIT_GSON_CONVERTER
+    implementation Libraries.RETROFIT_RX_ADAPTER
+    implementation Libraries.HTTP_LOGGING_INTERCEPTOR
+}

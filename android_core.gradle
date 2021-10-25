@@ -1,0 +1,13 @@
+import dependencies.Libraries
+
+dependencies {
+    implementation Libraries.APP_COMPAT
+    implementation Libraries.MATERIAL_DESIGN
+    implementation Libraries.CONSTRAINT_LAYOUT
+    testImplementation Libraries.JUNIT
+    androidTestImplementation Libraries.TEST_JUNIT
+    androidTestImplementation Libraries.TEST_ESPRESSO_CORE
+    implementation Libraries.VIEW_MODEL
+    implementation Libraries.LIVE_DATA
+    annotationProcessor Libraries.LIFECYCLE_COMPILER
+}

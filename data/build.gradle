@@ -1,0 +1,16 @@
+import dependencies.Libraries
+import dependencies.Modules
+
+apply plugin: 'com.android.library'
+apply from: '../android_common.gradle'
+apply from: '../android_network.gradle'
+
+dependencies {
+    implementation project(Modules.DOMAIN)
+
+    implementation Libraries.DAGGER
+    implementation Libraries.DAGGER_ANDROID
+    implementation Libraries.DAGGER_ANDROID_SUPPORT
+    annotationProcessor Libraries.DAGGER_COMPILER
+    annotationProcessor Libraries.DAGGER_PROCESSOR
+}

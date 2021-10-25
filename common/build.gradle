@@ -1,0 +1,4 @@
+apply plugin: 'com.android.library'
+apply from: '../android_common.gradle'
+apply from: '../android_core.gradle'
+apply from: '../android_network.gradle'

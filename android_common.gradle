@@ -1,0 +1,27 @@
+import dependencies.Releases
+import dependencies.Versions
+
+android {
+    compileSdkVersion Versions.COMPILE_SKD
+    buildToolsVersion Versions.BUILD_TOOLS
+
+    defaultConfig {
+        minSdkVersion Versions.MIN_SDK
+        targetSdkVersion Versions.TARGET_SDK
+        versionCode Releases.VERSION_CODE
+        versionName Releases.VERSION_NAME
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
